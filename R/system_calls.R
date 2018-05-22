@@ -25,11 +25,13 @@ summarize_system_calls <- function(path, calls_to_flag = system_calls()) {
 }
 
 digest_system_calls <- function(r_file, path, calls_to_flag = system_calls()) {
-  summary <- find_system_calls(parse(r_file), calls_to_flag)
-  if (nrow(summary) > 0L) {
-    summary$path <- sub(paste0("^", path, "/"), "", r_file)
+  result <- find_system_calls(parse(r_file), calls_to_flag)
+  if (nrow(result) == 0L) {
+    return(result)
   }
-  summary
+  result$path <- sub(paste0("^", path, "/"), "", r_file)
+  subset(result, select = c("path", "line1", "text")) %>%
+    magrittr::set_names(c("path", "line_number", "function_name"))
 }
 
 find_system_calls <- function(expr, calls_to_flag = system_calls()) {
