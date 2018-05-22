@@ -36,5 +36,5 @@ devtools::install_github("ropenscilabs/defender")
 You can check for system calls in any directory locally available:
 
 ```{r example}
-summarize_system_calls("./testevil")
+defender::summarize_system_calls("../testevil")
 ```
