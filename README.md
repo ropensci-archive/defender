@@ -1,19 +1,37 @@
 
+![](./man/figures/supergb.png)
+
+# rOpenSci Unconf 18 Project : defender
+
+## Authors:
+
+  - Ildiko Czeller
+  - Karthik Ram
+  - Bob Rudis
+  - Kara Woo
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-defender <img src="man/figures/logo.png" align="right"/>
-========================================================
 
-[![Travis build status](https://travis-ci.org/ropenscilabs/defender.svg?branch=master)](https://travis-ci.org/ropenscilabs/defender) [![Coverage status](https://img.shields.io/codecov/c/github/ropenscilabs/defender/master.svg)](https://codecov.io/github/ropenscilabs/defender?branch=master)
+# defender <img src="man/figures/logo.png" align="right"/>
 
-The goal of defender is to do static code analysis on other R packages to check for potential security risks and best practices. It provides checks on multiple levels:
+[![Travis build
+status](https://travis-ci.org/ropenscilabs/defender.svg?branch=master)](https://travis-ci.org/ropenscilabs/defender)
+[![Coverage
+status](https://img.shields.io/codecov/c/github/ropenscilabs/defender/master.svg)](https://codecov.io/github/ropenscilabs/defender?branch=master)
+
+The goal of defender is to do static code analysis on other R packages
+to check for potential security risks and best practices. It provides
+checks on multiple levels:
 
 1.  \[x\] static code analysis without installing the package
-2.  \[ \] more thorough but potentially dangerous checks with installation / in Docker container
+2.  \[ \] more thorough but potentially dangerous checks with
+    installation / in Docker container
 
-The checks do not tell you whether something is harmful but rather they flag code that you should double-check before running / loading the package.
+The checks do not tell you whether something is harmful but rather they
+flag code that you should double-check before running / loading the
+package.
 
-Installation
-------------
+## Installation
 
 You can install defender from github with:
 
@@ -22,8 +40,7 @@ You can install defender from github with:
 devtools::install_github("ropenscilabs/defender")
 ```
 
-Example
--------
+## Example
 
 ### System calls in R scripts
 
@@ -81,10 +98,9 @@ defender::check_namespace("../testevil", imports_to_flag = di)
 #> 4 function  processx::run processx
 ```
 
-Collaborators
--------------
+## Collaborators
 
--   Ildi Czeller @czeildi
--   Karthik Ram @karthik
--   Bob Rudis @hrbrmstr
--   Kara Woo @karawoo
+  - Ildi Czeller @czeildi
+  - Karthik Ram @karthik
+  - Bob Rudis @hrbrmstr
+  - Kara Woo @karawoo
