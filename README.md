@@ -15,10 +15,18 @@ You can install defender from github with:
 devtools::install_github("ropenscilabs/defender")
 ```
 
+## Goal
+
+Provide checks on multiple levels
+
+1. static code analysis, only clones a repo but does not install the package
+2. more thorough but potentially dangerous checks with installation / in Docker container
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-## basic example code
+summarize_system_calls(".")
+summarize_system_calls("./testevil")
 ```
