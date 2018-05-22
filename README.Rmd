@@ -44,7 +44,7 @@ defender::summarize_system_calls("../testevil")
 You can also include additional elements to flag as dangerous:
 
 ```{r system-calls-example-2}
-sc <- defender::system_calls("processx::poll")
+sc <- defender::system_calls("poll")
 defender::summarize_system_calls("../testevil", calls_to_flag = sc)
 ```
 

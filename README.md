@@ -50,7 +50,7 @@ defender::summarize_system_calls("../testevil")
 You can also include additional elements to flag as dangerous:
 
 ``` r
-sc <- defender::system_calls("processx::poll")
+sc <- defender::system_calls("poll")
 defender::summarize_system_calls("../testevil", calls_to_flag = sc)
 #>    line1 col1 line2 col2 id parent                token terminal    text
 #> 1      1    1     1    7  1      3 SYMBOL_FUNCTION_CALL     TRUE system2
@@ -59,6 +59,7 @@ defender::summarize_system_calls("../testevil", calls_to_flag = sc)
 #> 35     4    3     4    8 35     37 SYMBOL_FUNCTION_CALL     TRUE  system
 #> 66     8    3     8    8 66     68 SYMBOL_FUNCTION_CALL     TRUE  system
 #> 18     3   23     3   25 18     19 SYMBOL_FUNCTION_CALL     TRUE     run
+#> 58     9   13     9   16 58     60 SYMBOL_FUNCTION_CALL     TRUE    poll
 #> 25     2   14     2   20 25     27 SYMBOL_FUNCTION_CALL     TRUE system2
 #>                 path
 #> 1    inst/root_sys.R
@@ -67,6 +68,7 @@ defender::summarize_system_calls("../testevil", calls_to_flag = sc)
 #> 35      R/internal.R
 #> 66      R/internal.R
 #> 18      R/processx.R
+#> 58      R/processx.R
 #> 25 R/system_hidden.R
 ```
 
