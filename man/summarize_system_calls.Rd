@@ -4,10 +4,13 @@
 \alias{summarize_system_calls}
 \title{summarize occurences of system calls in project}
 \usage{
-summarize_system_calls(path)
+summarize_system_calls(path, calls_to_flag = system_calls())
 }
 \arguments{
 \item{path}{character, relative or absolute path for local code directory}
+
+\item{calls_to_flag}{character vector of functions names to flag as
+potentially dangerous system calls}
 }
 \value{
 data.frame with a row for each system call
@@ -21,5 +24,6 @@ for maliciousness.
 \dontrun{
 # git clone git@github.com:ropenscilabs/testevil.git
 summarize_system_calls("testevil")
+summarize_system_calls("testevil", system_calls("exec_background"))
 }
 }

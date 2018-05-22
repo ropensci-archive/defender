@@ -3,4 +3,5 @@
 export(check_namespace)
 export(dangerous_imports)
 export(summarize_system_calls)
+export(system_calls)
 importFrom(magrittr,"%>%")

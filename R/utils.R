@@ -15,6 +15,23 @@ dangerous_imports <- function(additional_dangerous_imports = character(0)) {
     unique()
 }
 
+#' Functions making System Calls
+#'
+#' Character vector of functions making system calls to check for in R source
+#' files.
+#'
+#' @param additional_system_calls character vector of user-defined
+#'   system calls
+#'
+#' @return character vector of all system calls
+#' @export
+#'
+#' @examples system_calls("exec_background")
+system_calls <- function(additional_system_calls = character(0)) {
+  c(base_system_calls(), "run", additional_system_calls) %>%
+    unique()
+}
+
 base_system_calls <- function() {
   c("system", "system2")
 }

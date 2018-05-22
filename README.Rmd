@@ -41,16 +41,22 @@ You can check for system calls in any directory locally available:
 defender::summarize_system_calls("../testevil")
 ```
 
+You can also include additional elements to flag as dangerous:
+
+```{r system-calls-example-2}
+sc <- defender::system_calls("processx::poll")
+defender::summarize_system_calls("../testevil", calls_to_flag = sc)
+```
+
 You can check the NAMESPACE file in a package for dangerous imports:
 
 ```{r namespace-example}
 defender::check_namespace("../testevil")
 ```
-
 You can also include additional elements to flag as dangerous:
 
 ```{r namespace-example-2}
 di <- defender::dangerous_imports("processx::poll")
-defender::check_namespace("../testevil", di)
+defender::check_namespace("../testevil", imports_to_flag = di)
 ```
 
