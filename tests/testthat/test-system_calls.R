@@ -23,7 +23,7 @@ test_that("find system calls returns rows of getParseData with only function cal
 
 test_that("find system calls does not return plain functions calls", {
   expect_equal(
-    nrow(find_system_calls(parse(text = "foo()\nsystem2()"))),
-    1
+    nrow(find_system_calls(parse(text = "foo()\nsystem2()\nsystem()"))),
+    2
   )
 })
