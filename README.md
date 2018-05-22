@@ -10,6 +10,8 @@ The goal of defender is to do static code analysis on other R packages to check 
 1.  \[x\] static code analysis without installing the package
 2.  \[ \] more thorough but potentially dangerous checks with installation / in Docker container
 
+The checks do not tell you whether something is harmful but rather they flag code that you should double-check before running / loading the package.
+
 Installation
 ------------
 
