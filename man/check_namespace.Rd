@@ -4,7 +4,7 @@
 \alias{check_namespace}
 \title{Read a package NAMESPACE and check for dangerous imports}
 \usage{
-check_namespace(pkg_path, dangerous_imports = character(0))
+check_namespace(pkg_path, dangerous_imports = dangerous_imports())
 }
 \arguments{
 \item{pkg_path}{path to package source tree}
@@ -17,6 +17,10 @@ packages and fully qualified references).
 }
 \examples{
 \dontrun{
-check_namespace("../testevil", c("processx", "sys", "processx::run"))
+check_namespace("../testevil")
+check_namespace(
+  "../testevil",
+  dangerous_imports(additional_dangerous_imports = "sys::exec_background")
+)
 }
 }

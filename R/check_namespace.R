@@ -8,9 +8,13 @@
 #' @param dangerous_imports character vector of dangerous items to find
 #' @export
 #' @examples \dontrun{
-#' check_namespace("../testevil", c("processx", "sys", "processx::run"))
+#' check_namespace("../testevil")
+#' check_namespace(
+#'   "../testevil",
+#'   dangerous_imports(additional_dangerous_imports = "sys::exec_background")
+#' )
 #' }
-check_namespace <- function(pkg_path, dangerous_imports = character(0)) {
+check_namespace <- function(pkg_path, dangerous_imports = dangerous_imports()) {
 
   assert_path_exists(pkg_path)
   assert_is_package(pkg_path)

@@ -30,7 +30,7 @@ digest_system_calls <- function(r_file, path) {
 }
 
 find_system_calls <- function(expr) {
-  system_function_names <- c("system2", "system", "run")
+  system_function_names <- c(base_system_calls(), "run")
 
   withr::with_options(
     c("keep.source" = TRUE),
