@@ -6,7 +6,8 @@
 \alias{defender-package}
 \title{defender: Check Package for Potential Security Violations}
 \description{
-Check an R package for potential security risks and violations via static code analysis.
+Check an R package for potential security risks and violations
+via static code analysis.
 }
 \author{
 \strong{Maintainer}: Ildiko Czeller \email{czeildi@gmail.com}

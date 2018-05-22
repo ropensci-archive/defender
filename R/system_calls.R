@@ -14,9 +14,8 @@
 #' summarize_system_calls("testevil")
 #' }
 summarize_system_calls <- function(path) {
-  if(!dir.exists(path)) {
-    stop(paste0("Path ", path, " not found, you may want to clone the repository first."))
-  }
+  assert_path_exists(path)
+
   r_paths <- get_r_script_paths(path = path)
   summaries_by_file <- lapply(r_paths, digest_system_calls, path)
   Reduce(rbind, summaries_by_file)

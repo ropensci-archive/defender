@@ -10,7 +10,8 @@ Authors@R: c(
     person("Kara", "Woo", role = "aut")
   )
 Maintainer: ropensci <ropensci@ropensci.org>
-Description: Check an R package for potential security risks and violations via static code analysis.
+Description: Check an R package for potential security risks and violations 
+  via static code analysis.
 Depends: R (>= 3.1.0)
 License: MIT + file LICENSE
 Encoding: UTF-8

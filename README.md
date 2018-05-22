@@ -46,3 +46,10 @@ defender::summarize_system_calls("../testevil")
 #> 18      R/processx.R
 #> 25 R/system_hidden.R
 ```
+
+You can check the NAMESPACE file in a package for dangerous imports:
+
+``` r
+defender::check_namespace("../testevil", c("processx", "sys", "processx::run"))
+#> [1] "sys"           "processx"      "processx::run"
+```
