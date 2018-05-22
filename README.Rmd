@@ -1,0 +1,40 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# defender
+
+[![Travis build status](https://travis-ci.org/ropenscilabs/defender.svg?branch=master)](https://travis-ci.org/ropenscilabs/defender)
+[![Coverage status](https://img.shields.io/codecov/c/github/ropenscilabs/defender/master.svg)](https://codecov.io/github/ropenscilabs/defender?branch=master)
+
+The goal of defender is to do static code analysis on other R packages to check for potential security risks and best practices. It provides checks on multiple levels:
+
+1. [x] static code analysis without installing the package
+2. [ ] more thorough but potentially dangerous checks with installation / in Docker container
+
+## Installation
+
+You can install defender from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("ropenscilabs/defender")
+```
+
+## Example
+
+You can check for system calls in any directory locally available:
+
+```{r example}
+summarize_system_calls("./testevil")
+```
