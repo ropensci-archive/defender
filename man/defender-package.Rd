@@ -9,7 +9,14 @@
 Check an R package for potential security risks and violations via static code analysis.
 }
 \author{
-\strong{Maintainer}: Ildi Czeller \email{czeildi@gmail.com}
+\strong{Maintainer}: Ildiko Czeller \email{czeildi@gmail.com}
+
+Authors:
+\itemize{
+  \item Karthik Ram \email{karthik.ram@gmail.com} ( 0000-0002-0233-1757)
+  \item Bob Rudis \email{bob@rud.is} (0000-0001-5670-2640)
+  \item Kara Woo
+}
 
 }
 \keyword{internal}

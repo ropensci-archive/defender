@@ -19,7 +19,7 @@ for maliciousness.
 }
 \examples{
 \dontrun{
-# git clone git@github.com:hrbrmstr/testevil.git
+# git clone git@github.com:ropenscilabs/testevil.git
 summarize_system_calls("testevil")
 }
 }

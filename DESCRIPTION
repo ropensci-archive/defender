@@ -1,7 +1,15 @@
 Package: defender
 Title: Check Package for Potential Security Violations
 Version: 0.0.0.9000
-Authors@R: person("Ildi", "Czeller", email = "czeildi@gmail.com", role = c("aut", "cre"))
+Authors@R: c(
+    person("Ildiko", "Czeller", email = "czeildi@gmail.com", role = c("aut", "cre")), 
+    person("Karthik", "Ram", email = "karthik.ram@gmail.com", role = c("aut"), 
+           comment = c(ORCID = " 0000-0002-0233-1757")),
+    person("Bob", "Rudis", email = "bob@rud.is", role = c("aut"), 
+           comment = c(ORCID = "0000-0001-5670-2640")),
+    person("Kara", "Woo", role = "aut")
+  )
+Maintainer: ropensci <ropensci@ropensci.org>
 Description: Check an R package for potential security risks and violations via static code analysis.
 Depends: R (>= 3.1.0)
 License: MIT + file LICENSE
