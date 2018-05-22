@@ -1,6 +1,6 @@
 #' Read a package NAMESPACE and check for dangerous imports
 #'
-#' Given a path to a package source tree, return a list of Imports (both whole
+#' Given a path to a package source tree, return a data.frame of Imports (both whole
 #' packages and fully qualified references).
 #'
 #' @md
@@ -32,9 +32,24 @@ check_namespace <- function(pkg_path, imports_to_flag = dangerous_imports()) {
   imported_functions <- transform_fully_qualified_refereces(fqrs)
 
 
-  all_imports <- c(imported_packages, imported_functions)
+  all_imports <- summarize_imports(imported_packages, imported_functions)
 
-  all_imports[all_imports %in% imports_to_flag]
+  all_imports %>%
+    subset(.$import %in% imports_to_flag) %>%
+    `row.names<-`(NULL)
+}
+
+summarize_imports <- function(imported_packages, imported_functions) {
+  all_imports <- rbind(
+    data.frame(type = "package", import = imported_packages, stringsAsFactors = FALSE),
+    data.frame(type = "function", import = imported_functions, stringsAsFactors = FALSE)
+  )
+  all_imports$package <- vapply(
+    strsplit(all_imports$import, "::"),
+    function(x) x[[1]],
+    "character"
+  )
+  all_imports
 }
 
 parse_ns_file <- function(pkg_path) {

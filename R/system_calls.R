@@ -38,5 +38,6 @@ find_system_calls <- function(expr, calls_to_flag = system_calls()) {
     utils::getParseData(expr)
   ) %>%
     subset(.$token == "SYMBOL_FUNCTION_CALL") %>%
-    subset(.$text %in% calls_to_flag)
+    subset(.$text %in% calls_to_flag) %>%
+    `row.names<-`(NULL)
 }

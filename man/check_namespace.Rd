@@ -12,7 +12,7 @@ check_namespace(pkg_path, imports_to_flag = dangerous_imports())
 \item{imports_to_flag}{character vector of dangerous items to find}
 }
 \description{
-Given a path to a package source tree, return a list of Imports (both whole
+Given a path to a package source tree, return a data.frame of Imports (both whole
 packages and fully qualified references).
 }
 \examples{
