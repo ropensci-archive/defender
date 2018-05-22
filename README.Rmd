@@ -12,7 +12,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-# defender <img src="man/figures/logo.png" align="right" />
+# defender <img src="man/figures/logo.png" align="right" style="width: 128px;"/>
+
 
 [![Travis build status](https://travis-ci.org/ropenscilabs/defender.svg?branch=master)](https://travis-ci.org/ropenscilabs/defender)
 [![Coverage status](https://img.shields.io/codecov/c/github/ropenscilabs/defender/master.svg)](https://codecov.io/github/ropenscilabs/defender?branch=master)
