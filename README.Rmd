@@ -44,6 +44,13 @@ defender::summarize_system_calls("../testevil")
 You can check the NAMESPACE file in a package for dangerous imports:
 
 ```{r namespace-example}
-defender::check_namespace("../testevil", c("processx", "sys", "processx::run"))
+defender::check_namespace("../testevil")
+```
+
+You can also include additional elements to flag as dangerous:
+
+```{r namespace-example-2}
+di <- defender::dangerous_imports("processx::poll")
+defender::check_namespace("../testevil", di)
 ```
 
