@@ -4,12 +4,12 @@
 \alias{check_namespace}
 \title{Read a package NAMESPACE and check for dangerous imports}
 \usage{
-check_namespace(pkg_path, dangerous_imports = dangerous_imports())
+check_namespace(pkg_path, imports_to_flag = dangerous_imports())
 }
 \arguments{
 \item{pkg_path}{path to package source tree}
 
-\item{dangerous_imports}{character vector of dangerous items to find}
+\item{imports_to_flag}{character vector of dangerous items to find}
 }
 \description{
 Given a path to a package source tree, return a list of Imports (both whole

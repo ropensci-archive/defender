@@ -5,7 +5,7 @@
 #'
 #' @md
 #' @param pkg_path path to package source tree
-#' @param dangerous_imports character vector of dangerous items to find
+#' @param imports_to_flag character vector of dangerous items to find
 #' @export
 #' @examples \dontrun{
 #' check_namespace("../testevil")
@@ -14,7 +14,7 @@
 #'   dangerous_imports(additional_dangerous_imports = "sys::exec_background")
 #' )
 #' }
-check_namespace <- function(pkg_path, dangerous_imports = dangerous_imports()) {
+check_namespace <- function(pkg_path, imports_to_flag = dangerous_imports()) {
 
   assert_path_exists(pkg_path)
   assert_is_package(pkg_path)
@@ -34,7 +34,7 @@ check_namespace <- function(pkg_path, dangerous_imports = dangerous_imports()) {
 
   all_imports <- c(imported_packages, imported_functions)
 
-  all_imports[all_imports %in% dangerous_imports]
+  all_imports[all_imports %in% imports_to_flag]
 }
 
 parse_ns_file <- function(pkg_path) {
