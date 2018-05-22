@@ -3,4 +3,3 @@
 ^\.travis\.yml$
 ^codecov\.yml$
 ^LICENSE\.md$
-^temp\.R$
