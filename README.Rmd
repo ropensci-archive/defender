@@ -36,6 +36,8 @@ devtools::install_github("ropenscilabs/defender")
 
 ## Example
 
+### System calls in R scripts
+
 You can check for system calls in any directory locally available:
 
 ```{r system-calls-example}
@@ -48,6 +50,8 @@ You can also include additional elements to flag as dangerous:
 sc <- defender::system_calls("poll")
 defender::summarize_system_calls("../testevil", calls_to_flag = sc)
 ```
+
+### System-related imports in NAMESPACE
 
 You can check the NAMESPACE file in a package for dangerous imports:
 

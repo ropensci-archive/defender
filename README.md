@@ -25,6 +25,8 @@ devtools::install_github("ropenscilabs/defender")
 Example
 -------
 
+### System calls in R scripts
+
 You can check for system calls in any directory locally available:
 
 ``` r
@@ -71,6 +73,8 @@ defender::summarize_system_calls("../testevil", calls_to_flag = sc)
 #> 7      R/processx.R
 #> 8 R/system_hidden.R
 ```
+
+### System-related imports in NAMESPACE
 
 You can check the NAMESPACE file in a package for dangerous imports:
 
