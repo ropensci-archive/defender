@@ -2,6 +2,17 @@
 output: github_document
 ---
 
+![](./man/figures/supergb.png)
+
+# rOpenSci Unconf 18 Project : defender
+
+## Authors:
+
+- Ildiko Czeller
+- Karthik Ram
+- Bob Rudis
+- Kara Woo
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, echo = FALSE}
