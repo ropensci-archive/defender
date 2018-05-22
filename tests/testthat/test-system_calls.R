@@ -1,5 +1,6 @@
 context("test-system_calls.R")
 
+
 test_that("expression is parsed to data frame", {
   expect_s3_class(
     find_system_calls(parse(text = "system2()")),
@@ -7,12 +8,6 @@ test_that("expression is parsed to data frame", {
   )
 })
 
-# test_that("find system calls returns error if param is not an expression", {
-#   expect_error(
-#     find_system_calls("foo <- function() 1"),
-#     "Param e must be of class `expression`"
-#   )
-# })
 
 test_that("find system calls returns rows of getParseData with only function calls", {
   expect_setequal(
@@ -21,9 +16,18 @@ test_that("find system calls returns rows of getParseData with only function cal
   )
 })
 
+
 test_that("find system calls does not return plain functions calls", {
   expect_equal(
     nrow(find_system_calls(parse(text = "foo()\nsystem2()\nsystem()"))),
     2
+  )
+})
+
+
+test_that("informative error message if directory is not found", {
+  expect_error(
+    summarize_system_calls(file.path("non", "existent", "path")),
+    "Path non/existent/path not found, you may want to clone the repository first."
   )
 })
