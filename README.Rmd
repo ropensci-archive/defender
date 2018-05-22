@@ -65,3 +65,9 @@ di <- defender::dangerous_imports("processx::poll")
 defender::check_namespace("../testevil", imports_to_flag = di)
 ```
 
+## Collaborators
+
+- Ildi Czeller @czeildi
+- Karthik Ram @karthik
+- Bob Rudis @hrbrmstr
+- Kara Woo @karawoo

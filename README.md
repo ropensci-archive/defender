@@ -80,3 +80,11 @@ defender::check_namespace("../testevil", imports_to_flag = di)
 #> 3 function processx::poll processx
 #> 4 function  processx::run processx
 ```
+
+Collaborators
+-------------
+
+-   Ildi Czeller @czeildi
+-   Karthik Ram @karthik
+-   Bob Rudis @hrbrmstr
+-   Kara Woo @karawoo
