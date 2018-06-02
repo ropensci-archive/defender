@@ -20,7 +20,10 @@ Suggests:
     covr,
     testthat,
     knitr,
-    roxygen2
+    roxygen2,
+    rstudioapi,
+    shiny,
+    miniUI
 RoxygenNote: 6.0.1.9000
 Roxygen: list(markdown = TRUE)
 Imports: magrittr,
