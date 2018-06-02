@@ -1,0 +1,4 @@
+Name: List system calls
+Description: Lists all system calls in current directory in R source files in a data.frame
+Binding: summarize_system_calls
+Interactive: true

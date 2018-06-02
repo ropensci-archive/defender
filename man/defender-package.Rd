@@ -6,10 +6,16 @@
 \alias{defender-package}
 \title{defender: Check Package for Potential Security Violations}
 \description{
-\if{html}{\figure{logo.png}{options: align='right'}}
-
 Check an R package for potential security risks and violations
 via static code analysis.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/ropenscilabs/defender}
+  \item Report bugs at \url{https://github.com/ropenscilabs/defender/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Ildiko Czeller \email{czeildi@gmail.com}

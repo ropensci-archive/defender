@@ -16,7 +16,7 @@
 #' summarize_system_calls("testevil")
 #' summarize_system_calls("testevil", system_calls("exec_background"))
 #' }
-summarize_system_calls <- function(path, calls_to_flag = system_calls()) {
+summarize_system_calls <- function(path = '.', calls_to_flag = system_calls()) {
   assert_path_exists(path)
 
   r_paths <- get_r_script_paths(path = path)

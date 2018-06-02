@@ -4,7 +4,7 @@
 \alias{summarize_system_calls}
 \title{summarize occurences of system calls in project}
 \usage{
-summarize_system_calls(path, calls_to_flag = system_calls())
+summarize_system_calls(path = ".", calls_to_flag = system_calls())
 }
 \arguments{
 \item{path}{character, relative or absolute path for local code directory}
