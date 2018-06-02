@@ -2,3 +2,8 @@ Name: List system calls
 Description: Lists all system calls in given directory in R source files in a data.frame
 Binding: system_calls_addin
 Interactive: true
+
+Name: List namespace imports
+Description: Lists all system related imports in package
+Binding: check_namespace_addin
+Interactive: true
