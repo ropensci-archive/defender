@@ -1,7 +1,7 @@
-#' summarize occurences of system calls in project
+#' summarize occurrences of system calls in project
 #'
-#' Summarize and show occurences of system calls in the R files in a given
-#' folder. There could be more occurences. These calls should be further checked
+#' Summarize and show occurrences of system calls in the R files in a given
+#' folder. There could be more occurrences. These calls should be further checked
 #' for maliciousness.
 #'
 #' @param path character, relative or absolute path for local code directory
