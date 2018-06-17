@@ -31,3 +31,15 @@ test_that("informative error message if directory is not found", {
     "Path non/existent/path not found, you may want to clone the repository first."
   )
 })
+
+
+test_that("summarize system calls returns one data frame", {
+  expect_is(
+    summarize_system_calls("../.."),
+    "data.frame"
+  )
+  expect_is(
+    summarize_system_calls("../..", "tempdir"),
+    "data.frame"
+  )
+})
