@@ -51,21 +51,25 @@ summarize_imports <- function(imported_packages, imported_functions) {
   if(length(imported_packages) > 0) {
     pkgs <- data.frame(type = "package", import = as.character(imported_packages), stringsAsFactors = FALSE)
   } else {
-    pkgs <- data.frame()
+    pkgs <- data.frame(type = character(0), import = character(0))
   }
 
   if(length(imported_functions) > 0) {
     funs <- data.frame(type = "function", import = as.character(imported_functions), stringsAsFactors = FALSE)
   } else {
-    funs <- data.frame()
+    funs <- data.frame(type = character(0), import = character(0))
   }
 
   all_imports <- rbind(pkgs, funs)
-  all_imports$package <- vapply(
-    strsplit(all_imports$import, "::"),
-    function(x) x[[1]],
-    "character"
-  )
+  if (nrow(all_imports) > 0) {
+    all_imports$package <- vapply(
+      strsplit(all_imports$import, "::"),
+      function(x) x[[1]],
+      "character"
+    )
+  } else {
+    all_imports$package <- character(0)
+  }
   all_imports
 }
 

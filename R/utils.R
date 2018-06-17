@@ -28,7 +28,11 @@ dangerous_imports <- function(additional_dangerous_imports = character(0)) {
 #'
 #' @examples system_calls("exec_background")
 system_calls <- function(additional_system_calls = character(0)) {
-  c(base_system_calls(), "run", additional_system_calls) %>%
+  c(
+    base_system_calls(),
+    "processx::run", "sys::exec_internal",
+    additional_system_calls
+  ) %>%
     unique()
 }
 

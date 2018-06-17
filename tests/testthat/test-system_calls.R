@@ -18,14 +18,6 @@ test_that("expression is parsed to data frame", {
 })
 
 
-test_that("find system calls returns rows of getParseData with only function calls", {
-  expect_setequal(
-    find_system_calls(parse(text = "system2()"))$token,
-    "SYMBOL_FUNCTION_CALL"
-  )
-})
-
-
 test_that("find system calls does not return plain functions calls", {
   expect_equal(
     nrow(find_system_calls(parse(text = "foo()\nsystem2()\nsystem()"))),
