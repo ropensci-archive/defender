@@ -1,5 +1,15 @@
 context("test-check_namespace.R")
 
+setup({
+  td <- file.path(normalizePath("."), "testdir")
+  unlink(td, recursive = TRUE)
+  dir.create(td)
+})
+
+teardown({
+  unlink(td, recursive = TRUE)
+})
+
 test_that("parse fqrs from nested list to vector", {
   expect_equal(
     transform_fully_qualified_refereces(
@@ -37,9 +47,14 @@ test_that("extract whole package imports", {
 })
 
 test_that("parse namespace file", {
+  td <- file.path(normalizePath("."), "testdir")
+  unlink(td, recursive = TRUE)
+  dir.create(td)
+  file.create(file.path(td, "NAMESPACE"))
   expect_true(
-    all(c("imports", "exports") %in% names(parse_ns_file("../..")))
+    all(c("imports", "exports") %in% names(parse_ns_file(td)))
   )
+  unlink(td, recursive = TRUE)
 })
 
 test_that("summarize imports returns data frame", {
@@ -63,17 +78,23 @@ test_that("parse all imports by type", {
 })
 
 test_that("check namespace fails if path is not package", {
-  expect_error(check_namespace("."))
+  expect_error(check_namespace(tempdir()))
   expect_error(check_namespace("nonexistent/path"))
 })
 
 test_that("check namespace returns only flagged imports", {
+  td <- file.path(normalizePath("."), "testdir")
+  unlink(td, recursive = TRUE)
+  dir.create(td)
+  file.create(file.path(td, "DESCRIPTION"))
+  writeLines("import(magrittr)", file.path(td, "NAMESPACE"))
   expect_equal(
-    nrow(check_namespace("../..", imports_to_flag = "withr")),
+    nrow(check_namespace(td, imports_to_flag = "withr")),
     0
   )
   expect_equal(
-    nrow(check_namespace("../..", imports_to_flag = "magrittr")),
+    nrow(check_namespace(td, imports_to_flag = "magrittr")),
     1
   )
+  unlink(td, recursive = TRUE)
 })

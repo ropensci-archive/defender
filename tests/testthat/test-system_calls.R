@@ -1,5 +1,14 @@
 context("test-system_calls.R")
 
+setup({
+  td <- file.path(normalizePath("."), "testdir")
+  unlink(td, recursive = TRUE)
+  dir.create(td)
+})
+
+teardown({
+  unlink(td, recursive = TRUE)
+})
 
 test_that("expression is parsed to data frame", {
   expect_s3_class(
@@ -34,12 +43,17 @@ test_that("informative error message if directory is not found", {
 
 
 test_that("summarize system calls returns one data frame", {
+  td <- file.path(normalizePath("."), "testdir")
+  unlink(td, recursive = TRUE)
+  dir.create(td)
+  writeLines("sys::run()", file.path(td, "test.R"))
   expect_is(
-    summarize_system_calls("../.."),
+    summarize_system_calls(td),
     "data.frame"
   )
   expect_is(
-    summarize_system_calls("../..", "tempdir"),
+    summarize_system_calls(td, "sys::run"),
     "data.frame"
   )
+  unlink(td, recursive = TRUE)
 })

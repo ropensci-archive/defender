@@ -20,7 +20,10 @@ check_namespace <- function(pkg_path, imports_to_flag = dangerous_imports()) {
 
   imports_list <- parse_ns_file(pkg_path)$imports
 
-  all_imports <- do.call(summarize_imports, parse_all_imports(imports_list))
+  parsed_imports <- parse_all_imports(imports_list)
+  all_imports <- summarize_imports(
+    parsed_imports[["imported_packages"]], parsed_imports[["imported_functions"]]
+  )
 
   all_imports %>%
     subset(.$import %in% imports_to_flag) %>%
@@ -45,10 +48,19 @@ parse_all_imports <- function(imports_list) {
 }
 
 summarize_imports <- function(imported_packages, imported_functions) {
-  all_imports <- rbind(
-    data.frame(type = "package", import = imported_packages, stringsAsFactors = FALSE),
-    data.frame(type = "function", import = imported_functions, stringsAsFactors = FALSE)
-  )
+  if(length(imported_packages) > 0) {
+    pkgs <- data.frame(type = "package", import = as.character(imported_packages), stringsAsFactors = FALSE)
+  } else {
+    pkgs <- data.frame()
+  }
+
+  if(length(imported_functions) > 0) {
+    funs <- data.frame(type = "function", import = as.character(imported_functions), stringsAsFactors = FALSE)
+  } else {
+    funs <- data.frame()
+  }
+
+  all_imports <- rbind(pkgs, funs)
   all_imports$package <- vapply(
     strsplit(all_imports$import, "::"),
     function(x) x[[1]],
