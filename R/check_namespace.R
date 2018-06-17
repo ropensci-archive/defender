@@ -48,13 +48,13 @@ parse_all_imports <- function(imports_list) {
 }
 
 summarize_imports <- function(imported_packages, imported_functions) {
-  if(length(imported_packages) > 0) {
+  if (length(imported_packages) > 0) {
     pkgs <- data.frame(type = "package", import = as.character(imported_packages), stringsAsFactors = FALSE)
   } else {
     pkgs <- data.frame(type = character(0), import = character(0))
   }
 
-  if(length(imported_functions) > 0) {
+  if (length(imported_functions) > 0) {
     funs <- data.frame(type = "function", import = as.character(imported_functions), stringsAsFactors = FALSE)
   } else {
     funs <- data.frame(type = character(0), import = character(0))

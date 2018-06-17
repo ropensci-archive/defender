@@ -54,5 +54,4 @@ find_system_calls <- function(expr, calls_to_flag = system_calls()) {
 
   rbind(base_sys_calls, pkg_sys_calls) %>%
     `row.names<-`(NULL)
-
 }
