@@ -2,7 +2,7 @@
 % Please edit documentation in R/system_calls.R
 \name{summarize_system_calls}
 \alias{summarize_system_calls}
-\title{summarize occurences of system calls in project}
+\title{summarize occurrences of system calls in project}
 \usage{
 summarize_system_calls(path = ".", calls_to_flag = system_calls())
 }
@@ -16,8 +16,8 @@ potentially dangerous system calls}
 data.frame with a row for each system call
 }
 \description{
-Summarize and show occurences of system calls in the R files in a given
-folder. There could be more occurences. These calls should be further checked
+Summarize and show occurrences of system calls in the R files in a given
+folder. There could be more occurrences. These calls should be further checked
 for maliciousness.
 }
 \examples{

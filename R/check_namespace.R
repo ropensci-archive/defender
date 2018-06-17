@@ -20,6 +20,14 @@ check_namespace <- function(pkg_path, imports_to_flag = dangerous_imports()) {
 
   imports_list <- parse_ns_file(pkg_path)$imports
 
+  all_imports <- do.call(summarize_imports, parse_all_imports(imports_list))
+
+  all_imports %>%
+    subset(.$import %in% imports_to_flag) %>%
+    `row.names<-`(NULL)
+}
+
+parse_all_imports <- function(imports_list) {
   whole_pkg_imports <- extract_whole_pkg_imports(imports_list)
   fqrs <- extract_fully_qualified_references(imports_list)
 
@@ -30,12 +38,10 @@ check_namespace <- function(pkg_path, imports_to_flag = dangerous_imports()) {
     unique()
   imported_functions <- transform_fully_qualified_refereces(fqrs)
 
-
-  all_imports <- summarize_imports(imported_packages, imported_functions)
-
-  all_imports %>%
-    subset(.$import %in% imports_to_flag) %>%
-    `row.names<-`(NULL)
+  list(
+    "imported_packages" = imported_packages,
+    "imported_functions" = imported_functions
+  )
 }
 
 summarize_imports <- function(imported_packages, imported_functions) {
