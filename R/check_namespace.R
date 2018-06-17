@@ -15,7 +15,6 @@
 #' )
 #' }
 check_namespace <- function(pkg_path, imports_to_flag = dangerous_imports()) {
-
   assert_path_exists(pkg_path)
   assert_is_package(pkg_path)
 
@@ -54,7 +53,8 @@ summarize_imports <- function(imported_packages, imported_functions) {
 
 parse_ns_file <- function(pkg_path) {
   parseNamespaceFile(
-    basename(pkg_path), dirname(pkg_path), mustExist = FALSE
+    basename(pkg_path), dirname(pkg_path),
+    mustExist = FALSE
   )
 }
 
