@@ -1,5 +1,8 @@
 {
-  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "defender",
   "description": "Check an R package for potential security risks and violations \n  via static code analysis.",
@@ -175,7 +178,17 @@
   ],
   "releaseNotes": "https://github.com/ropenscilabs/defender/blob/master/NEWS.md",
   "readme": "https://github.com/ropenscilabs/defender/blob/master/README.md",
-  "fileSize": "52.986KB",
-  "contIntegration": ["https://travis-ci.org/ropenscilabs/defender", "https://codecov.io/github/ropenscilabs/defender?branch=master"],
-  "keywords": ["unconf18", "security", "r", "r-package", "rstats"]
+  "fileSize": "53.058KB",
+  "contIntegration": [
+    "https://travis-ci.org/ropenscilabs/defender",
+    "https://codecov.io/github/ropenscilabs/defender?branch=master"
+  ],
+  "keywords": [
+    "unconf18",
+    "security",
+    "r",
+    "r-package",
+    "rstats",
+    "unconf"
+  ]
 }

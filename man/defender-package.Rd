@@ -6,8 +6,10 @@
 \alias{defender-package}
 \title{defender: Check Package for Potential Security Violations}
 \description{
-Check an R package for potential security risks and violations
-via static code analysis.
+\if{html}{\figure{logo.png}{options: align='right'}}
+
+Check an R package for potential security risks and violations 
+  via static code analysis.
 }
 \seealso{
 Useful links:

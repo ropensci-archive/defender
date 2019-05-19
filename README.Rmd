@@ -25,10 +25,11 @@ knitr::opts_chunk$set(
 
 # defender <img src="man/figures/logo.png" align="right"/>
 
-
+<!-- badges: start -->
 [![Travis build status](https://travis-ci.org/ropenscilabs/defender.svg?branch=master)](https://travis-ci.org/ropenscilabs/defender)
 [![Coverage status](https://img.shields.io/codecov/c/github/ropenscilabs/defender/master.svg)](https://codecov.io/github/ropenscilabs/defender?branch=master)
 [![Lifecycle Status](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/)
+<!-- badges: end -->
 
 The goal of defender is to do static code analysis on other R packages to check for potential security risks and best practices. It provides checks on multiple levels:
 
@@ -52,13 +53,13 @@ devtools::install_github("ropenscilabs/defender")
 
 You can check for system calls in any directory locally available:
 
-```{r system-calls-example}
+```{r system-calls-example, eval = FALSE}
 defender::summarize_system_calls("../testevil")
 ```
 
 You can also include additional elements to flag as dangerous:
 
-```{r system-calls-example-2}
+```{r system-calls-example-2, eval = FALSE}
 sc <- defender::system_calls("poll")
 defender::summarize_system_calls("../testevil", calls_to_flag = sc)
 ```
@@ -67,12 +68,12 @@ defender::summarize_system_calls("../testevil", calls_to_flag = sc)
 
 You can check the NAMESPACE file in a package for dangerous imports:
 
-```{r namespace-example}
+```{r namespace-example, eval = FALSE}
 defender::check_namespace("../testevil")
 ```
 You can also include additional elements to flag as dangerous:
 
-```{r namespace-example-2}
+```{r namespace-example-2, eval = FALSE}
 di <- defender::dangerous_imports("processx::poll")
 defender::check_namespace("../testevil", imports_to_flag = di)
 ```
