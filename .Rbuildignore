@@ -7,3 +7,4 @@
 ^README-.*\.png$
 ^_pkgdown\.yml$
 ^docs$
+^codemeta\.json$
