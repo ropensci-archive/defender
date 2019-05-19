@@ -7,6 +7,7 @@ setup({
 })
 
 teardown({
+  td <- file.path(normalizePath("."), "testdir")
   unlink(td, recursive = TRUE)
 })
 
@@ -55,6 +56,10 @@ test_that("parse namespace file", {
     all(c("imports", "exports") %in% names(parse_ns_file(td)))
   )
   unlink(td, recursive = TRUE)
+})
+
+test_that("summarize imports handles empty import list", {
+  expect_silent(summarize_imports(list(), list()))
 })
 
 test_that("summarize imports returns data frame", {

@@ -30,16 +30,28 @@ digest_system_calls <- function(r_file, path, calls_to_flag = system_calls()) {
     return(result)
   }
   result$path <- sub(paste0("^", path, "/"), "", r_file)
-  subset(result, select = c("path", "line1", "text")) %>%
-    magrittr::set_names(c("path", "line_number", "function_name"))
+  subset(result, select = c("path", "line1", "text", "function_name")) %>%
+    magrittr::set_names(c("path", "line_number", "call", "function_name"))
 }
 
 find_system_calls <- function(expr, calls_to_flag = system_calls()) {
-  withr::with_options(
+  parsed_data <- withr::with_options(
     c("keep.source" = TRUE),
-    utils::getParseData(expr)
-  ) %>%
-    subset(.$token == "SYMBOL_FUNCTION_CALL") %>%
-    subset(.$text %in% calls_to_flag) %>%
+    utils::getParseData(expr, includeText = TRUE)
+  )
+
+  base_fun_row_indexes <- which(
+    (parsed_data$token == "SYMBOL_FUNCTION_CALL") & (parsed_data$text %in% calls_to_flag)
+  )
+  base_sys_calls <- parsed_data[base_fun_row_indexes - 1, ]
+  base_sys_calls$function_name <- parsed_data[base_fun_row_indexes, ]$text
+
+  pkg_fun_row_indexes <- which(
+    (parsed_data$token == "expr") & (parsed_data$text %in% calls_to_flag[grepl("::", calls_to_flag)])
+  )
+  pkg_sys_calls <- parsed_data[pkg_fun_row_indexes - 1, ]
+  pkg_sys_calls$function_name <- parsed_data[pkg_fun_row_indexes, ]$text
+
+  rbind(base_sys_calls, pkg_sys_calls) %>%
     `row.names<-`(NULL)
 }
