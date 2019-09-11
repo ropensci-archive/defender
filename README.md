@@ -3,8 +3,7 @@
 rOpenSci Unconf 18 Project : defender
 =====================================
 
-<img src="man/figures/supergb.png" align="right"/>
-========================================================
+<img src="man/figures/supergb.png" style="width: 50%; height: 50%"/>
 
 Authors:
 --------
