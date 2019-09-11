@@ -7,13 +7,6 @@ output: github_document
 
 <img src="man/figures/supergb.png" style="width: 50%; height: 50%"/>
 
-## Authors:
-
-- Ildiko Czeller
-- Karthik Ram
-- Bob Rudis
-- Kara Woo
-
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
