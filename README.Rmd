@@ -1,10 +1,11 @@
 ---
 output: github_document
 ---
-
-![](./man/figures/supergb.png)
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # rOpenSci Unconf 18 Project : defender
+
+# <img src="man/figures/supergb.png" align="right"/>
 
 ## Authors:
 
@@ -13,7 +14,6 @@ output: github_document
 - Bob Rudis
 - Kara Woo
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(

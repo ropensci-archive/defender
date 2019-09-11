@@ -178,7 +178,7 @@
   ],
   "releaseNotes": "https://github.com/ropenscilabs/defender/blob/master/NEWS.md",
   "readme": "https://github.com/ropenscilabs/defender/blob/master/README.md",
-  "fileSize": "53.058KB",
+  "fileSize": "53.069KB",
   "contIntegration": [
     "https://travis-ci.org/ropenscilabs/defender",
     "https://codecov.io/github/ropenscilabs/defender?branch=master"
@@ -190,5 +190,6 @@
     "r-package",
     "rstats",
     "unconf"
-  ]
+  ],
+  "relatedLink": "https://docs.ropensci.org/defender/"
 }

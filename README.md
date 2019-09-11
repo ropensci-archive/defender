@@ -1,8 +1,10 @@
-
-![](./man/figures/supergb.png)
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 rOpenSci Unconf 18 Project : defender
 =====================================
+
+<img src="man/figures/supergb.png" align="right"/>
+========================================================
 
 Authors:
 --------
@@ -12,7 +14,6 @@ Authors:
 -   Bob Rudis
 -   Kara Woo
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 defender <img src="man/figures/logo.png" align="right"/>
 ========================================================
 

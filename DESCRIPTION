@@ -30,5 +30,5 @@ Imports:
     magrittr,
     utils,
     withr
-URL: https://github.com/ropenscilabs/defender
+URL: https://docs.ropensci.org/defender/, https://github.com/ropenscilabs/defender
 BugReports: https://github.com/ropenscilabs/defender/issues
