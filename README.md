@@ -3,6 +3,9 @@
 rOpenSci Unconf 18 Project : defender
 =====================================
 
+[![Project Status: Abandoned – Initial development has started, but there has not yet been a stable, usable release; the project has been abandoned and the author(s) do not intend on continuing development.](https://www.repostatus.org/badges/latest/abandoned.svg)](https://www.repostatus.org/#abandoned)
+
+
 <img src="man/figures/supergb.png" style="width: 50%; height: 50%"/>
 
 defender <img src="man/figures/logo.png" align="right"/>
